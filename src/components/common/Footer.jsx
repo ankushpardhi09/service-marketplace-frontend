@@ -12,7 +12,7 @@ const Footer = () => {
               <div className="w-9 h-9 bg-indigo-600 rounded-xl flex items-center justify-center">
                 <span className="text-white font-bold text-lg">S</span>
               </div>
-              <span className="font-extrabold text-white text-xl">ServeHub</span>
+              <span className="font-extrabold text-white text-xl">Fix Buddy</span>
             </div>
             <p className="text-sm text-gray-400 mb-4">India's most trusted home services platform. Quality services at your doorstep.</p>
             <div className="flex gap-3">
@@ -50,7 +50,7 @@ const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2">
                 <FiMail className="w-4 h-4 text-indigo-400 flex-shrink-0" />
-                <span>support@servehub.in</span>
+                <span>support@fixbuddy.in</span>
               </div>
               <div className="flex items-center gap-2">
                 <FiPhone className="w-4 h-4 text-indigo-400 flex-shrink-0" />
@@ -72,7 +72,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
-          <p>© 2025 ServeHub. All rights reserved.</p>
+          <p>© 2025 Fix Buddy. All rights reserved.</p>
           <p className="mt-2 sm:mt-0">Made with ❤️ in India</p>
         </div>
       </div>

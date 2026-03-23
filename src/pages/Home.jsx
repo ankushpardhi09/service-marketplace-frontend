@@ -51,7 +51,7 @@ const Home = ({ authState, onLogout }) => {
       <div className="min-h-screen flex items-center justify-center bg-indigo-50">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-indigo-600 font-semibold">Loading ServeHub...</p>
+          <p className="text-indigo-600 font-semibold">Loading Fix Buddy...</p>
         </div>
       </div>
     );
@@ -211,7 +211,7 @@ const Home = ({ authState, onLogout }) => {
       <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-3">Become a Service Partner</h2>
-          <p className="text-indigo-100 mb-6">Join thousands of professionals earning with ServeHub</p>
+          <p className="text-indigo-100 mb-6">Join thousands of professionals earning with Fix Buddy</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button size="lg" variant="secondary" className="border-white text-indigo-700">
               Register as Partner

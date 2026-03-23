@@ -49,10 +49,10 @@ const LoginRegister = ({ onLogin }) => {
             <div className="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center shadow-lg">
               <span className="text-white font-bold text-2xl">S</span>
             </div>
-            <span className="font-extrabold text-gray-800 text-2xl">ServeHub</span>
+            <span className="font-extrabold text-gray-800 text-2xl">Fix Buddy</span>
           </Link>
           <h2 className="text-2xl font-bold text-gray-800">{isLogin ? 'Welcome back!' : 'Create account'}</h2>
-          <p className="text-gray-500 text-sm mt-1">{isLogin ? 'Sign in to your account' : 'Join ServeHub today'}</p>
+          <p className="text-gray-500 text-sm mt-1">{isLogin ? 'Sign in to your account' : 'Join Fix Buddy today'}</p>
         </div>
 
         <div className="bg-white rounded-2xl shadow-xl p-8">

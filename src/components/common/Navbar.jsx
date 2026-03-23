@@ -20,9 +20,9 @@ const Navbar = ({ authState, onLogout }) => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 flex-shrink-0">
             <div className="w-9 h-9 bg-indigo-600 rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-lg">S</span>
+              <span className="text-white font-bold text-lg">FB</span>
             </div>
-            <span className="font-extrabold text-gray-800 text-xl hidden sm:block">ServeHub</span>
+            <span className="font-extrabold text-gray-800 text-xl hidden sm:block">Fix Buddy</span>
           </Link>
 
           {/* Search bars - desktop */}
