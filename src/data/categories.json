@@ -1,0 +1,8 @@
+[
+  { "id": 1, "name": "Cleaning", "icon": "🧹", "description": "Home & office cleaning services", "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400" },
+  { "id": 2, "name": "Appliance Repair", "icon": "🔧", "description": "Fix all home appliances", "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400" },
+  { "id": 3, "name": "Beauty Services", "icon": "💄", "description": "Salon & spa at home", "image": "https://images.unsplash.com/photo-1560869713-7d0a29430803?w=400" },
+  { "id": 4, "name": "Plumbing", "icon": "🚿", "description": "Pipe & plumbing solutions", "image": "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400" },
+  { "id": 5, "name": "Electrical", "icon": "⚡", "description": "Wiring & electrical repairs", "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400" },
+  { "id": 6, "name": "Painting", "icon": "🎨", "description": "Interior & exterior painting", "image": "https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?w=400" }
+]

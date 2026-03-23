@@ -1,0 +1,14 @@
+{
+  "customers": [
+    { "id": 1, "name": "Rahul Sharma", "email": "rahul@example.com", "phone": "9876543210", "city": "Bangalore", "joined": "2024-06-15", "bookings": 5 },
+    { "id": 2, "name": "Priya Singh", "email": "priya@example.com", "phone": "9876543211", "city": "Mumbai", "joined": "2024-07-20", "bookings": 3 },
+    { "id": 3, "name": "Amit Kumar", "email": "amit@example.com", "phone": "9876543212", "city": "Delhi", "joined": "2024-08-10", "bookings": 7 },
+    { "id": 4, "name": "Sneha Patel", "email": "sneha@example.com", "phone": "9876543213", "city": "Ahmedabad", "joined": "2024-09-05", "bookings": 2 }
+  ],
+  "partners": [
+    { "id": 1, "name": "CleanPro Services", "email": "cleanpro@example.com", "phone": "9876501001", "city": "Bangalore", "category": "Cleaning", "rating": 4.8, "totalJobs": 234, "earnings": 45000, "status": "Approved" },
+    { "id": 2, "name": "TechFix Solutions", "email": "techfix@example.com", "phone": "9876501002", "city": "Mumbai", "category": "Appliance Repair", "rating": 4.7, "totalJobs": 178, "earnings": 38000, "status": "Approved" },
+    { "id": 3, "name": "GlowUp Beauty", "email": "glowup@example.com", "phone": "9876501003", "city": "Delhi", "category": "Beauty Services", "rating": 4.9, "totalJobs": 312, "earnings": 62000, "status": "Pending" },
+    { "id": 4, "name": "FixIt Plumbing", "email": "fixit@example.com", "phone": "9876501004", "city": "Hyderabad", "category": "Plumbing", "rating": 4.6, "totalJobs": 89, "earnings": 21000, "status": "Pending" }
+  ]
+}

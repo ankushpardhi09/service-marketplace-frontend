@@ -1,0 +1,8 @@
+[
+  { "id": "BK001", "service": "Deep Home Cleaning", "customer": "Rahul Sharma", "partner": "CleanPro Services", "date": "2025-01-15", "time": "10:00 AM", "status": "Completed", "amount": 1499, "address": "123 MG Road, Bangalore" },
+  { "id": "BK002", "service": "AC Service & Repair", "customer": "Priya Singh", "partner": "TechFix Solutions", "date": "2025-01-16", "time": "02:00 PM", "status": "Pending", "amount": 799, "address": "45 Koramangala, Bangalore" },
+  { "id": "BK003", "service": "Haircut & Styling", "customer": "Amit Kumar", "partner": "GlowUp Beauty", "date": "2025-01-17", "time": "11:00 AM", "status": "Confirmed", "amount": 399, "address": "78 HSR Layout, Bangalore" },
+  { "id": "BK004", "service": "Bathroom Cleaning", "customer": "Sneha Patel", "partner": "CleanPro Services", "date": "2025-01-18", "time": "09:00 AM", "status": "In Progress", "amount": 499, "address": "12 Indiranagar, Bangalore" },
+  { "id": "BK005", "service": "Washing Machine Repair", "customer": "Vikram Nair", "partner": "TechFix Solutions", "date": "2025-01-19", "time": "03:00 PM", "status": "Cancelled", "amount": 599, "address": "56 Whitefield, Bangalore" },
+  { "id": "BK006", "service": "Facial & Cleanup", "customer": "Divya Reddy", "partner": "GlowUp Beauty", "date": "2025-01-20", "time": "12:00 PM", "status": "Completed", "amount": 599, "address": "34 Jayanagar, Bangalore" }
+]
