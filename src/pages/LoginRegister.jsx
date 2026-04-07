@@ -3,14 +3,17 @@ import { useNavigate, Link } from 'react-router-dom';
 import { FiMail, FiLock, FiUser, FiEye, FiEyeOff } from 'react-icons/fi';
 import FormInput from '../components/forms/FormInput';
 import Button from '../components/common/Button';
+import { useAuth } from '../hooks/useAuth';
 
-const LoginRegister = ({ onLogin }) => {
+const LoginRegister = () => {
   const navigate = useNavigate();
+  const { login, register } = useAuth();
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', password: '', role: 'Customer' });
   const [errors, setErrors] = useState({});
+  const [submitError, setSubmitError] = useState('');
 
   const validate = () => {
     const e = {};
@@ -26,19 +29,59 @@ const LoginRegister = ({ onLogin }) => {
     const { name, value } = e.target;
     setForm(prev => ({ ...prev, [name]: value }));
     if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }));
+    if (submitError) setSubmitError('');
+  };
+
+  const getFirebaseErrorMessage = (error) => {
+    const messageByCode = {
+      'auth/email-already-in-use': 'This email is already registered.',
+      'auth/invalid-email': 'Please enter a valid email address.',
+      'auth/invalid-credential': 'Invalid email or password.',
+      'auth/user-not-found': 'No account found for this email.',
+      'auth/wrong-password': 'Incorrect password.',
+      'auth/weak-password': 'Password must be at least 6 characters.',
+    };
+
+    return messageByCode[error?.code] || 'Unable to complete this request right now.';
+  };
+
+  const redirectByRole = (roleKey) => {
+    if (roleKey === 'partner') {
+      navigate('/partner');
+      return;
+    }
+    if (roleKey === 'admin') {
+      navigate('/admin');
+      return;
+    }
+    navigate('/');
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
+
     setLoading(true);
-    await new Promise(r => setTimeout(r, 1000));
-    setLoading(false);
-    onLogin({ name: form.name || form.email.split('@')[0], email: form.email, role: form.role });
-    if (form.role === 'Partner') navigate('/partner');
-    else if (form.role === 'Admin') navigate('/admin');
-    else navigate('/');
+
+    try {
+      const payload = {
+        name: form.name,
+        email: form.email,
+        password: form.password,
+        role: form.role,
+      };
+
+      const userData = isLogin
+        ? await login({ email: payload.email, password: payload.password })
+        : await register(payload);
+
+      redirectByRole(userData.roleKey);
+    } catch (error) {
+      setSubmitError(getFirebaseErrorMessage(error));
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -127,8 +170,8 @@ const LoginRegister = ({ onLogin }) => {
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Register as <span className="text-red-500">*</span>
                 </label>
-                <div className="grid grid-cols-3 gap-2">
-                  {['Customer', 'Partner', 'Admin'].map(role => (
+                <div className="grid grid-cols-2 gap-2">
+                  {['Customer', 'Partner'].map(role => (
                     <button
                       key={role}
                       type="button"
@@ -139,10 +182,16 @@ const LoginRegister = ({ onLogin }) => {
                           : 'border-gray-200 text-gray-500 hover:border-gray-300'
                       }`}
                     >
-                      {role === 'Customer' ? '👤' : role === 'Partner' ? '🔧' : '⚙️'} {role}
+                      {role === 'Customer' ? '👤' : '🔧'} {role}
                     </button>
                   ))}
                 </div>
+              </div>
+            )}
+
+            {!!submitError && (
+              <div className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700 mb-3">
+                {submitError}
               </div>
             )}
 
@@ -176,7 +225,7 @@ const LoginRegister = ({ onLogin }) => {
 
           {isLogin && (
             <div className="mt-4 p-3 bg-indigo-50 rounded-xl text-xs text-indigo-700">
-              <strong>Demo:</strong> Use any email/password (6+ chars). Select role at signup.
+              <strong>Tip:</strong> Sign up first, then log in with the same credentials.
             </div>
           )}
         </div>

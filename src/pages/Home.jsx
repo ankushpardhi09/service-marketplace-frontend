@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { FiSearch, FiMapPin, FiArrowRight, FiChevronRight } from 'react-icons/fi';
 import Navbar from '../components/common/Navbar';
@@ -12,7 +12,6 @@ import categoriesData from '../data/categories.json';
 const Home = ({ authState, onLogout }) => {
   const [searchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState(searchParams.get('search') || '');
-  const [filteredServices, setFilteredServices] = useState(servicesData);
   const [activeCategory, setActiveCategory] = useState('All');
   const [heroSearch, setHeroSearch] = useState('');
   const [loading, setLoading] = useState(true);
@@ -21,7 +20,7 @@ const Home = ({ authState, onLogout }) => {
     setTimeout(() => setLoading(false), 600);
   }, []);
 
-  useEffect(() => {
+  const filteredServices = useMemo(() => {
     let result = servicesData;
     if (activeCategory !== 'All') {
       result = result.filter(s => s.category === activeCategory);
@@ -32,7 +31,7 @@ const Home = ({ authState, onLogout }) => {
         s.category.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
-    setFilteredServices(result);
+    return result;
   }, [activeCategory, searchQuery]);
 
   const categories = ['All', ...categoriesData.map(c => c.name)];
